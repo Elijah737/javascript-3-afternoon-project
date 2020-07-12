@@ -135,5 +135,15 @@ const purchases = [{"owner":"Barry","price":103},{"owner":"Bob","price":75},
 /*
   Use a high order method to create to get the sum of bobsTotal.
 */
+// filter and reduce (destructure price)
 
-let bobsTotal = purchases.
+// let bobsTotal = purchases.filter(Bob)
+// .reduce(price)
+// return bobsTotal.price
+let bobsTotal = purchases.filter(function(element, index, array){
+  return element.owner === 'Bob';
+}) .reduce((acc, curr) => {
+  return acc + curr.price
+},0)
+
+// let bobsTotal = bobsTotal.price
