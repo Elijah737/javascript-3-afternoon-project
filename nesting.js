@@ -53,7 +53,14 @@ var employees = [
 //Code Here
 
 function employeeUpdater(){
-  
+  for(var i=0; i < employees.length; i++){
+    if(employees[i].firstName == "Theo"){
+      delete employees[i]
+    } else if (employees[i].firstName == "Lorie"){
+      employees[i].department = "HR"
+    }
+  }
+  return employees
 }
 
 ////////// PROBLEM 2 //////////
@@ -71,6 +78,32 @@ var workplaceAccidents = [12, 56, 44, 3, 29, 56, 56, 3, 7, 12];
 */
 
 //Code Here
+// splice, delete
+
+function removeDuplicates(){
+  for(let i=0; i < workplaceAccidents.length; i++){
+    for(var x=i + 1; x < workplaceAccidents.length; x++){
+      if (workplaceAccidents[i] == workplaceAccidents[x] ){
+        workplaceAccidents.splice(x,1)
+      }
+    }
+  }
+  return workplaceAccidents
+}
+
+// function looper(){
+//   for(i=0; i < numsArr.length; i++){
+//     for(x=0; x < numsArr[i].length; x++){
+//       if(numsArr[i][x] % 2 !== 0){
+//         numsArr[i][x] = 'odd'
+//       } else {
+//         numsArr[i][x] = 'even'
+//       }
+//     }
+//   }
+//   return numsArr
+// }
+
 
 
 
@@ -99,9 +132,11 @@ var cat = {
 */
 
 //Code Here
-var grumpyActivity;
-var fluffy2ndFriend;
+// var grumpyActivity;
+// var fluffy2ndFriend;
 
+var grumpyActivity = 'eat food';
+var fluffy2ndFriend = 'Lazy Bones';
 
 
 ////////// PROBLEM 4 //////////
@@ -141,6 +176,20 @@ var myCar = {
 */
 
 //Code Here
+// function recordCleaner(){
+//   for(i = myCar.accidents[0] ; i < myCar.accidents.length ; i++){
+//     if(myCar.accidents[i].atFaultForAccident === true){
+//       myCar.accidents[i].atFaultForAccident === false
+//     }
+//   }
+//   return myCar
+// }
+
+function recordCleaner(){
+  for(let i = 0 ; i < myCar.accidents.length ; i++){
+    myCar.accidents[i].atFaultForAccident = false
+  }
+}
 
 
 
@@ -161,4 +210,15 @@ var numsArr = [ [1, 2, 3, 4], [5, 6], [7, 8, 9, 10, 11]];
 
 //Code Here
 
-
+function looper(){
+  for(i=0; i < numsArr.length; i++){
+    for(x=0; x < numsArr[i].length; x++){
+      if(numsArr[i][x] % 2 !== 0){
+        numsArr[i][x] = 'odd'
+      } else {
+        numsArr[i][x] = 'even'
+      }
+    }
+  }
+  return numsArr
+}
